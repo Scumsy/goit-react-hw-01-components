@@ -21,7 +21,7 @@ export const TransactionsList = ({ transactions }) => {
 
         <tbody>
           {transactions.map(transaction => (
-            <TableRow key={transactions.id}>
+            <TableRow key={transaction.id}>
               <TransactionLine transaction={transaction} />
             </TableRow>
           ))}

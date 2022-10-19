@@ -16,7 +16,7 @@ export const FriendsCard = ({ friends: { avatar, name, isOnline, id } }) => {
         <FriendStatusOffline></FriendStatusOffline>
       )}
 
-      <img class="avatar" src={avatar} alt="User avatar" width="100" />
+      <img className="avatar" src={avatar} alt="User avatar" width="100" />
       <FriendName>{name}</FriendName>
     </>
   );

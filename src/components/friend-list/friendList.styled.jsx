@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const FriendListCards = styled.ul`
   display: block;
+  margin-top: 50px;
 `;
 
 export const FriendListItem = styled.li`
@@ -9,12 +10,12 @@ export const FriendListItem = styled.li`
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   width: 500px;
   height: 150px;
-  /* justify-content: center; */
+
   align-items: center;
-  border-style: solid;
+
   border-radius: 15px;
   background-color: lightgray;
 `;
