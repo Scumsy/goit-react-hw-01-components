@@ -10,7 +10,7 @@ import {
   UserStatsQuantity,
   UserStatsLabel,
   UserStatsItem,
-} from './profile.styled';
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
@@ -41,9 +41,13 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.objectOf(PropTypes.number),
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
