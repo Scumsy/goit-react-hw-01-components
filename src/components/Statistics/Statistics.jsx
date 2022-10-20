@@ -9,15 +9,15 @@ import {
   StatisticPercentage,
 } from './Statistics.styled';
 
-export const Statistics = ({ stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
     <StatisticSection>
-      <StatisticTitle>Upload stats</StatisticTitle>
+      {title ? <StatisticTitle>{title}</StatisticTitle> : ''}
       <StatisticList>
-        {stats.map(stat => (
-          <StatisticListItem key={stat.id}>
-            <StatisticLabel>{stat.label}</StatisticLabel>
-            <StatisticPercentage>{stat.percentage} %</StatisticPercentage>
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticListItem key={id}>
+            <StatisticLabel>{label}</StatisticLabel>
+            <StatisticPercentage>{percentage} %</StatisticPercentage>
           </StatisticListItem>
         ))}
       </StatisticList>
@@ -26,11 +26,12 @@ export const Statistics = ({ stats }) => {
 };
 
 Statistics.propTypes = {
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
       id: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };

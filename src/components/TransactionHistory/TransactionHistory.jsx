@@ -21,11 +21,11 @@ export const TransactionsList = ({ transactions }) => {
         </TableHead>
 
         <tbody>
-          {transactions.map(transaction => (
-            <TableRow key={transaction.id}>
-              <TableCell>{transaction.type}</TableCell>
-              <TableCell>{transaction.amount}</TableCell>
-              <TableCell>{transaction.currency}</TableCell>
+          {transactions.map(({ id, type, amount, currency }) => (
+            <TableRow key={id}>
+              <TableCell>{type}</TableCell>
+              <TableCell>{amount}</TableCell>
+              <TableCell>{currency}</TableCell>
             </TableRow>
           ))}
         </tbody>
@@ -42,5 +42,5 @@ TransactionsList.propTypes = {
       id: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
